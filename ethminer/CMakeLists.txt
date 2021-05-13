@@ -13,10 +13,12 @@ if(MSVC)
 	target_sources(${EXECUTABLE} PRIVATE ethminer.rc)
 endif()
 
+set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "zilminer")
+
 hunter_add_package(CLI11)
 find_package(CLI11 CONFIG REQUIRED)
 
-target_link_libraries(ethminer PRIVATE ethcore poolprotocols devcore ethminer-buildinfo CLI11::CLI11 Boost::system Boost::thread)
+target_link_libraries(ethminer PRIVATE ethcore poolprotocols devcore ethminer-buildinfo CLI11::CLI11 Boost::system)
 
 if(ETHDBUS)
 	find_package(PkgConfig)
