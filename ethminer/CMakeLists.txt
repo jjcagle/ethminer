@@ -12,7 +12,7 @@ add_executable(${EXECUTABLE} ${SRC_LIST} ${HEADERS})
 if(MSVC)
 	target_sources(${EXECUTABLE} PRIVATE ethminer.rc)
 endif()
-
+#fork
 hunter_add_package(CLI11)
 find_package(CLI11 CONFIG REQUIRED)
 
